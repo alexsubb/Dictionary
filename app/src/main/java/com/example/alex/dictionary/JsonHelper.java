@@ -13,14 +13,12 @@ import java.net.URL;
 import java.util.List;
 
 public class JsonHelper {
-    private static JsonHelper helper;
-    public static StringBuilder result = new StringBuilder();
+
     private static String key = "trnsl.1.1.20180821T123608Z.266179947af465ba.641d3675275d3e122fcda62b8e9cfedff81f2c07";
     private static String lang = "en-ru";
     private static MyTask mt;
-    // private String uRl ="https://translate.yandex.net/api/v1.5/tr.json/translate?key="+key+"&lang="+lang+"&text=";
 
-    public static List<String> getJsonStringYandex(final String text) throws IOException {
+    public static List<String> getJsonStringYandex(final String text)  {
         final StringBuilder result = new StringBuilder();
 
         try {
@@ -70,7 +68,6 @@ public class JsonHelper {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         Translate text = gson.fromJson(str,Translate. class);
-
         return text.text;
     }
 }

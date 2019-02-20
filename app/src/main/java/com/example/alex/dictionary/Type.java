@@ -1,18 +1,13 @@
 package com.example.alex.dictionary;
-public class Type  {
+
+public class Type {
     int id;
-   public String word;
-   public String translate;
-    Type(String word,String translate,int id)
-    {
+    public String word;
+    public String translate;
+
+    Type(String word, String translate, int id) {
         this.id = id;
-        this.word=word;
-        this.translate=translate;
+        this.word = word;
+        this.translate = translate;
     }
-    @Override
-    public String toString() {
-        return word + "    "+translate;
-    }
-
-
 }

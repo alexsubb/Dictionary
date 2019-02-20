@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class BoxAdapter extends BaseAdapter {
-    Context ctx;
-    ArrayList<Type> objects;
+    private Context ctx;
+    private ArrayList<Type> objects;
 
     BoxAdapter(Context context, ArrayList<Type> type) {
         ctx = context;
@@ -39,16 +39,17 @@ public class BoxAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
 
-        if(view == null){
+        if (view == null) {
             LayoutInflater lInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = lInflater.inflate(R.layout.item,parent,false);
+            view = lInflater.inflate(R.layout.item, parent, false);
         }
         Type t = getType(position);
-        ((TextView)view.findViewById(R.id.word)).setText(t.word);
-        ((TextView)view.findViewById(R.id.translate)).setText(t.translate);
+        ((TextView) view.findViewById(R.id.word)).setText(t.word);
+        ((TextView) view.findViewById(R.id.translate)).setText(t.translate);
         return view;
     }
-    Type getType(int position){
-        return ((Type)getItem(position));
+
+    private Type getType(int position) {
+        return ((Type) getItem(position));
     }
 }
